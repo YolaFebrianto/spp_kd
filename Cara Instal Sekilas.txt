@@ -1,0 +1,11 @@
+Cara Install Aplikasi SPP (Kalam_Digital)
+1. Silahkan Buat Database
+2. Upload Source Code di cpanel, dan Upload database di phpmyadmin
+3. Sambugkan Database dengan sourecode (application > config > database > geser kebawah isikan username, passeord, dan database)
+
+
+Login admin
+email = admin@admin.com
+pass = admin
+
+selamat berkreasi
