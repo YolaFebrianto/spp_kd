@@ -109,7 +109,7 @@
 									<a href="<?php echo site_url('manage/student/edit/' . $student['student_id']) ?>" class="btn btn-success">
 										<i class="fa fa-edit"></i> Edit
 									</a>
-									<a href="#delModal<?php echo $student['student_id']; ?>" data-toggle="modal" class="btn btn-danger"><i class="fa fa-trash" data-toggle="tooltip" title="Hapus"></i> Hapus</a>
+									<a href="#delModal<?php echo $student['student_id']; ?>" data-toggle="modal" class="btn btn-danger" onclick="getId(<?php echo $student['student_id'] ?>)"><i class="fa fa-trash" data-toggle="tooltip" title="Hapus"></i> Hapus</a>
 									<?php } ?>
 								</div>
 							</div>
@@ -130,8 +130,9 @@
 									<p>Apakah anda yakin akan menghapus data ini?</p>
 								</div>
 								<div class="modal-footer">
-									<?php echo form_open('manage/student/delete/' . $student['student_id']); ?>
+									<?php echo form_open('manage/student/delete'); ?>
 									<input type="hidden" name="delName" value="<?php echo $student['student_full_name']; ?>">
+									<input type="hidden" name="student_id" id="studentId">
 									<button type="button" class="btn btn-default pull-left" data-dismiss="modal"><span class="fa fa-close"></span> Batal</button>
 									<button type="submit" class="btn btn-danger"><span class="fa fa-check"></span> Hapus</button>
 									<?php echo form_close(); ?>
@@ -144,3 +145,8 @@
 
 				</section>
 			</div>
+<script>
+	function getId(id) {
+		$('#studentId').val(id)
+	}
+</script>

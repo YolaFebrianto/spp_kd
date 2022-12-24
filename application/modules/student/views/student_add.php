@@ -44,7 +44,7 @@ if (isset($student)) {
 		</h1>
 		<ol class="breadcrumb">
 			<li><a href="<?php echo site_url('manage') ?>"><i class="fa fa-th"></i> Home</a></li>
-			<li><a href="<?php echo site_url('manage/students') ?>">Manage students</a></li>
+			<li><a href="<?php echo site_url('manage/student') ?>">Manage students</a></li>
 			<li class="active"><?php echo isset($title) ? '' . $title : null; ?></li>
 		</ol>
 	</section>

@@ -29,6 +29,11 @@ class Period_model extends CI_Model {
         {
             $this->db->where('period_end', $params['period_end']);
         }
+        if(isset($params['period']))
+        {
+            $this->db->where('period_start', $params['period']);
+            $this->db->or_where('period_end', $params['period']);
+        }
 
         if(isset($params['limit']))
         {

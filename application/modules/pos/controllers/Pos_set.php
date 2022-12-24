@@ -67,6 +67,7 @@ class Pos_set extends CI_Controller {
     public function add($id = NULL) {
         $this->load->library('form_validation');
         $this->form_validation->set_rules('pos_name', 'Pos Bayar', 'trim|required|xss_clean');
+        $this->form_validation->set_rules('pos_description', 'Pos Keterangan', 'trim|required|xss_clean');
         
         $this->form_validation->set_error_delimiters('<div class="alert alert-danger"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>', '</div>');
         $data['operation'] = is_null($id) ? 'Tambah' : 'Sunting';
