@@ -36,7 +36,8 @@ class Profile_student extends CI_Controller {
       $params['student_phone'] = $this->input->post('student_phone');
       $params['student_last_update'] = date('Y-m-d H:i:s');
       $params['student_born_place'] = $this->input->post('student_born_place'); 
-      $params['student_born_date'] = $this->input->post('student_born_date'); 
+      $params['student_born_date'] = $this->input->post('student_born_date');
+      $params['student_hobby'] = $this->input->post('student_hobby');
       $params['student_address'] = $this->input->post('student_address'); 
       $params['student_name_of_mother'] = $this->input->post('student_name_of_mother'); 
       $params['student_name_of_father'] = $this->input->post('student_name_of_father'); 

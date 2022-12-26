@@ -33,10 +33,105 @@
    <script src="<?php echo media_url() ?>/js/jquery.inputmask.bundle.js"></script>
    
    <script src="<?php echo base_url('/media/js/fullcalendar/fullcalendar.js');?>"></script>
-   
-
+  <style type="text/css">
+    .skin-blue .sidebar a{
+      color: #b8c7ce;
+    }
+    .skin-blue .main-header .navbar .sidebar-toggle,
+    .skin-blue .user-panel>.info, .skin-blue .user-panel>.info>a,
+    .skin-blue .main-header .navbar .nav>li>a{
+      color: white;
+    }
+    .nav .open>a, .nav .open>a:focus, .nav .open>a:hover{
+      color: #000;
+      background-color: #b8c7ce;
+    }
+    .nav>li>a:focus, .nav>li>a:hover{
+      background-color: #b8c7ce;
+    }
+    .navbar-nav>.user-menu>.dropdown-menu>li.user-header>p{
+      color: black;
+    }
+    ul.treeview-menu{
+      background: #32642D;
+    }
+    ul.treeview-menu li:hover a{
+      /*background: green;*/
+      color:white;
+    }
+    @media screen and (min-width: 1080px){
+      .table-responsive {
+        overflow-x: hidden;
+      }
+    }
+    .skin-blue .main-header .navbar{
+      background: #32642D;
+    }
+    .skin-blue .main-header .logo{
+      background: #224820;
+      color: #fff;
+    }
+    .content-wrapper, .right-side{
+      background: #D0FED0;
+    }
+    .skin-blue .sidebar-menu>li.header{
+      background: #224820;
+      color: white;
+    }
+    .skin-blue .wrapper, 
+    .skin-blue .main-sidebar, 
+    .skin-blue .left-side{
+      background: #224820;
+    }
+    .skin-blue .sidebar-menu>li:hover>a, 
+    .skin-blue .sidebar-menu>li.active>a{
+      background: #32642D;
+      border-left-color: white;
+      color: #fff;
+    }
+    .box.box-info,.box.box-primary{
+      border-top-color: green;
+    }
+    .skin-blue .main-header .navbar .sidebar-toggle:hover{
+      background: #224820;
+    }
+    .skin-blue .main-header .logo:hover{
+      background: #32642D;
+    }
+    .pagination>.active>a, 
+    .pagination>.active>a:focus, 
+    .pagination>.active>a:hover, 
+    .pagination>.active>span, 
+    .pagination>.active>span:focus, 
+    .pagination>.active>span:hover{
+      background: green;
+      border-color: green;
+    }
+    /* MODAL VERTICAL CENTER */
+    .vertical-alignment-helper {
+      display:table;
+      height: 100%;
+      width: 100%;
+      pointer-events:none; /* This makes sure that we can still click outside of the modal to close it */
+    }
+    .vertical-align-center {
+      /* To center vertically */
+      display: table-cell;
+      vertical-align: middle;
+      pointer-events:none;
+    }
+    .modal-content {
+      /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+      width:inherit;
+      max-width:inherit; /* For Bootstrap 4 - to avoid the modal window stretching full width */
+      height:inherit;
+      /* To center horizontally */
+      margin: 0 auto;
+      pointer-events: all;
+    }
+  </style>
  </head>
- <body class="hold-transition skin-purple-light fixed sidebar-mini" <?php echo isset($ngapp) ? $ngapp : null; ?>>
+ <body class="hold-transition skin-blue fixed sidebar-mini" <?php echo isset($ngapp) ? $ngapp : null; ?>>
   <div class="wrapper">
 
     <header class="main-header">

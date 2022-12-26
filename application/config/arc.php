@@ -20,7 +20,8 @@ $config['media_url'] = '-';
 */
 $config['app_name'] = 'SPPS-APP';
 $config['version'] = 'V.3.0';
-$config['created'] = 'Copyright © '.date('Y').' <a target="_blank" href="#">HAFASIA™</a>. All rights reserved.';
+//<a target="_blank" href="#">HAFASIA™</a>
+$config['created'] = 'Copyright © '.date('Y').'. All rights reserved.';
 
 /*
 |--------------------------------------------------------------------------
