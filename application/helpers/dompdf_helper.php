@@ -2,7 +2,8 @@
 function pdf_create($html, $filename='', $stream=TRUE, $paper = 'Letter', $orientation = 'portrait') 
 {
 
-    require_once("dompdf/dompdf_config.inc.php");
+    // require_once("dompdf/dompdf_config.inc.php");
+    require_once APPPATH.'helpers/dompdf/dompdf_config.inc.php';
     
     $dompdf = new DOMPDF();
     $dompdf->load_html($html);
@@ -10,7 +11,7 @@ function pdf_create($html, $filename='', $stream=TRUE, $paper = 'Letter', $orien
 
     $dompdf->render();
     if ($stream) {
-        $dompdf->stream($filename.'.pdf', array("Attachment" => 0));
+        $dompdf->stream($filename.'.pdf', array("Attachment" => false));
     } else {
         return $dompdf->output(); 
     }
