@@ -1,5 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<head>
   <meta http-equiv="Content-Style-Type" content="text/css" /> 
   <title><?php echo $student['student_full_name'] ?></title>
 
@@ -63,8 +61,6 @@
  }
 
 </style>
-</head>
-<body>
   <fieldset class="fieldset-auto-width">
     <p class="school"><?php echo $setting_school['setting_value'] ?></p>
     <p class="address"><?php echo $setting_address['setting_value'].' - '.$setting_district['setting_value'].' - '.$setting_city['setting_value'] ?></p>
@@ -73,9 +69,9 @@
     <div class="container">
       <div class="topright">
         <?php if (!empty($student['student_img'])) { ?>
-        <img src="<?php echo upload_url('student/'.$student['student_img']) ?>" style="height: 50px; width: 50px; border:1px solid">
+        <img src="<?php echo base_url('uploads/student/'.$student['student_img']) ?>" style="height: 50px; width: 50px; border:1px solid">
         <?php } else { ?>
-        <img src="<?php echo media_url('img/missing.png') ?>" style="height: 50px; width: 50px;border:1px solid">
+        <img src="<?php echo base_url('media/img/missing.png') ?>" style="height: 50px; width: 50px;border:1px solid">
         <?php } ?>
       </div>
 
@@ -111,10 +107,7 @@
 
       <br>
 
-      <img style="width:142.56pt;height:18pt;z-index:6;" src="<?php echo media_url().'/barcode_student/'.$student['student_nis'].'.png' ?>" alt="Image_4_0" />
+      <img style="width:142.56pt;height:18pt;z-index:6;" src="<?php echo base_url().'media/barcode_student/'.$student['student_nis'].'.png' ?>" alt="Image_4_0" />
       <p style="font-size: 5pt;margin-left: 25%;margin-top:-0px;"><?php echo pretty_date(date('Y-m-d'),'d m Y',false) ?></p>
-
-    </fieldset>
-
-  </body>
-  </html>
+    </div>
+  </fieldset>

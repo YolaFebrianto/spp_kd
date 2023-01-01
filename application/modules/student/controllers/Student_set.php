@@ -460,6 +460,7 @@ function multiple() {
     for($i = 0; $i < count($data['student']); $i++ ){
       $this->barcode2($data['student'][$i]['student_nis'], '');
     }
+    // $html = $this->load->view('student/student_multiple_pdf', $data);
     $html = $this->load->view('student/student_multiple_pdf', $data, true);
     $data = pdf_create($html, 'KARTU_'.date('d_m_Y'), TRUE, 'A4', 'potrait');
   }
@@ -484,6 +485,7 @@ function printPdf($id = NULL) {
   $data['setting_city'] = $this->Setting_model->get(array('id' => SCHOOL_CITY)); 
   $data['student'] = $this->Student_model->get(array('id' => $id));
   $this->barcode2($data['student']['student_nis'], '');
+  // $html = $this->load->view('student/student_pdf', $data);
   $html = $this->load->view('student/student_pdf', $data, true);
   $data = pdf_create($html, $data['student']['student_full_name'], TRUE, 'A4', 'potrait');
 }

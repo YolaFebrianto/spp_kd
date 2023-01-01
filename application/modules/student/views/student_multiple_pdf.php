@@ -1,6 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<head>
-  <meta http-equiv="Content-Style-Type" content="text/css" /> 
   <title>Kartu_Pembayaran_Siswa</title>
 
   <style type="text/css">
@@ -64,8 +61,6 @@
  }
 
 </style>
-</head>
-<body>
   <?php
   $i=1;
    foreach ($student as $row) : ?>
@@ -77,9 +72,9 @@
     <div class="container">
       <div class="topright">
         <?php if (!empty($row['student_img'])) { ?>
-        <img src="<?php echo upload_url('student/'.$row['student_img']) ?>" style="height: 60px; width: 50px; border:1px solid;">
+        <img src="<?php echo base_url().'uploads/student/'.$row['student_img']; ?>" style="height: 60px; width: 50px; border:1px solid;">
         <?php } else { ?>
-        <img src="<?php echo media_url('img/missing.png') ?>" style="height: 60px; width: 50px; border:1px solid;">
+        <img src="<?php echo base_url().'media/img/missing.png'; ?>" style="height: 60px; width: 50px; border:1px solid;">
         <?php } ?>
       </div>
 
@@ -115,14 +110,11 @@
 
       <br>
 
-      <img style="width:142.56pt;height:18pt;z-index:6;" src="<?php echo media_url().'/barcode_student/'.$row['student_nis'].'.png' ?>" alt="Image_4_0" />
+      <img style="width:142.56pt;height:18pt;z-index:6;" src="<?php echo base_url().'media/barcode_student/'.$row['student_nis'].'.png' ?>" alt="Image_4_0" />
       <p style="font-size: 5pt;margin-left: 25%;margin-top:-0px;"><?php echo pretty_date(date('Y-m-d'),'d m Y',false) ?></p>
-
-    </fieldset>
+    </div>
+  </fieldset>
     <?php if ($i == 2): ?>
-      <br>
+    <br>
     <?php $i=0; endif?>
   <?php $i++; endforeach ?>
-
-  </body>
-  </html>
