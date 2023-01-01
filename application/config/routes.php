@@ -64,6 +64,7 @@ $route['manage/(:any)/(:any)/(:any)'] = "$1/$1_set/$3_$2";
 $route['manage'] = "dashboard/Dashboard_set";
 
 $route['student/auth'] = 'student/auth_student/login';
+$route['student/cek_bayar'] = "dashboard/Dashboard_student/cek_bayar";
 $route['student/([a-zA-Z_-]+)'] = '$1/$1_student';
 $route['student/auth/(:any)'] = 'student/auth_student/$1';
 $route['student/([a-zA-Z_-]+)/(:any)'] = '$1/$1_student/$2';
