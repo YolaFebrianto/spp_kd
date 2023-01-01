@@ -422,6 +422,10 @@ function multiple() {
   $action = $this->input->post('action');
   $print = array();
   $idcard = array();
+  if (empty($this->input->post('msg'))) {
+    $this->session->set_flashdata('failed', 'Silahkan pilih data terlebih dahulu!');
+    redirect($_SERVER['HTTP_REFERER']);
+  }
   if ($action == "pass") {
     $pass = $this->input->post('msg');
     for ($i = 0; $i < count($pass); $i++) {
