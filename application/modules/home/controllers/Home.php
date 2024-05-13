@@ -44,18 +44,18 @@ public function index($offset = NULL) {
     $params['group'] = TRUE;
     $pay['paymentt'] = TRUE;
     $param['status'] = 1;
-    $pay['student_id']=$siswa['student_id'];
+    $pay['student_id']=@$siswa['student_id'];
 
     
     $paramsPage = $params;
     $data['period'] = $this->Period_model->get($params);
-    $data['siswa'] = $this->Student_model->get(array('student_id'=>$siswa['student_id'], 'group'=>TRUE));
+    $data['siswa'] = $this->Student_model->get(array('student_id'=>@$siswa['student_id'], 'group'=>TRUE));
     $data['student'] = $this->Bulan_model->get($pay);
     $data['bebas'] = $this->Bebas_model->get($pay);
   $data['free'] = $this->Bebas_pay_model->get($params);
   $data['dom'] = $this->Bebas_pay_model->get($params);
   $data['bill'] = $this->Bulan_model->get_total($params);
-  $data['bulan'] = $this->Bulan_model->get(array('student_id'=>$siswa['student_id']));
+  $data['bulan'] = $this->Bulan_model->get(array('student_id'=>@$siswa['student_id']));
   $data['in'] = $this->Bulan_model->get_total($param);
   $data['setting_logo'] = $this->Setting_model->get(array('id' => 6));
   $data['setting_school'] = $this->Setting_model->get(array('id' => 1));
